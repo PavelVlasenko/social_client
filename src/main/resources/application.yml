@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: social_client
+
+server:
+  port: 8888
+
+social_client:
+  ribbon:
+    eureka:
+      enabled: false
+    listOfServers: localhost:8090
+    ServerListRefreshInterval: 1000
