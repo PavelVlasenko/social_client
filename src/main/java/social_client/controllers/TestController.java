@@ -6,11 +6,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
-import social_client.ClientConfiguration;
 
 @RestController
-@RibbonClient(name = "social_client", configuration = ClientConfiguration.class)
-
 public class TestController {
 
     @LoadBalanced
@@ -21,7 +18,7 @@ public class TestController {
 
     @RequestMapping("/hi")
     public String hi() {
-        return restTemplate().getForObject("http://social_client/test", String.class);
+        return restTemplate().getForObject("http://social_server/test", String.class);
     }
 
 }
